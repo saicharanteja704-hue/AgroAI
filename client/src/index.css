@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased min-h-screen selection:bg-emerald-500 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .gradient-agri {
+    background: linear-gradient(135deg, #052e16 0%, #14532d 50%, #166534 100%);
+  }
+
+  .gradient-card-glow {
+    background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 60%);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+  }
+
+  .border-agri-subtle {
+    border-color: rgba(34, 197, 94, 0.2);
+  }
+}
+
+/* Print Styles for Advisories */
+@media print {
+  header, nav, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+}
