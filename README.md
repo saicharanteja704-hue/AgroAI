@@ -123,6 +123,26 @@ JWT_EXPIRES_IN=7d
 # Google Gemini AI Integration
 # Optional in dev (falls back to built-in Agronomic Reasoning Engine if not set)
 GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+## 🚀 Production Deployment
+
+This app is configured for deployment on Render. The project includes a `render.yaml` file for a Node.js web service and an attached PostgreSQL database.
+
+### Render setup steps
+
+1. Push the project to GitHub.
+2. Sign in to Render and choose "New +" → "Web Service".
+3. Connect the GitHub repository.
+4. Select the branch (`main`).
+5. Render will use the existing `render.yaml` configuration automatically.
+6. Add the required environment variables in Render if needed:
+   - `GEMINI_API_KEY`
+   - `JWT_SECRET`
+   - `NODE_ENV=production`
+7. Deploy the service.
+
+The app is already configured to run with the built front-end and Express API in production mode.
 GEMINI_MODEL=gemini-2.5-flash
 ```
 
